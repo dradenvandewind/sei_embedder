@@ -1,0 +1,2 @@
+GST_DEBUG=lvcompositor:5 gst-launch-1.0 lvcompositor name=comp ! filesink location=./h266_lcevc_regsitred_data.266 filesrc location=../akiyo_cif.y4m ! y4mdec ! videoconvert ! video/x-raw,width=352,height=288,format=I420 ! videoconvertscale ! video/x-raw,width=1280,height=720,format=I420_10LE ! h266enc bitrate=1000000 ! comp.sink_main filesrc location=../akiyo_cif.y4m ! y4mdec ! videoconvert ! video/x-raw,width=352,height=288,format=I420 ! xeveenc ! comp.sink_secondary
+
